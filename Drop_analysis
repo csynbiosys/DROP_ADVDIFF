@@ -1,0 +1,245 @@
+%% C=100 mM Ka changes
+ close all
+ clear all
+%load the files containing time and centre of mass
+Ka=[300;3000;30000];
+
+
+    for j=1:length(Ka)
+        
+
+h=strcat('100ki18','_ka',num2str(Ka(j)),'.txt');
+
+
+P1 = dlmread(h,'\t'); 
+
+N=length(P1);
+
+P1(:,2)=P1(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+for k=1:N
+    
+    CMC(k,j)=-(P1(k,2)-0.55)./0.55; %save CMC for that KA in each column
+    
+    t(k)=P1(k,1);
+   
+end
+
+
+cc=CMC(:,j);
+
+[maxcmc(j),tmax(j)]=max(cc) %track maximum CMC and arg max for that combination KI KA
+  
+    
+    end
+
+   figure(1)
+   plot(t,CMC)
+   figure(2)
+   plot(Ka,maxcmc)
+   figure(3)
+   plot(Ka,tmax)
+
+%% KI changes 
+close all
+clear all
+Ki=[1.8; 18; 180];
+
+    for j=1:length(Ki)
+        
+
+h=strcat('100ki',num2str(Ki(j)),'_ka3000','.txt');
+
+
+P1 = dlmread(h,'\t'); 
+
+N=length(P1);
+
+P1(:,2)=P1(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+for k=1:N
+    
+    CMC(k,j)=-(P1(k,2)-0.55)./0.55; %save CMC for that KA in each column
+    
+    t(k)=P1(k,1);
+   
+end
+
+
+cc=CMC(:,j);
+
+[maxcmc(j),tmax(j)]=max(cc) %track maximum CMC and arg max for that combination KI KA
+  
+    
+    end
+
+   figure(1)
+   plot(t,CMC)
+   figure(2)
+   plot(Ki,maxcmc)
+   figure(3)
+   plot(Ki,tmax)
+   
+   %% C=10 mM Ka changes
+ close all
+ clear all
+%load the files containing time and centre of mass
+Ka=[300;3000;30000];
+
+
+    for j=1:length(Ka)
+        
+
+h=strcat('10_ki18','_ka',num2str(Ka(j)),'.txt');
+
+
+P1 = dlmread(h,'\t'); 
+
+N=length(P1);
+
+P1(:,2)=P1(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+for k=1:N
+    
+    CMC(k,j)=-(P1(k,2)-0.55)./0.55; %save CMC for that KA in each column
+    
+    t(k)=P1(k,1);
+   
+end
+
+
+cc=CMC(:,j);
+
+[maxcmc(j),tmax(j)]=max(cc) %track maximum CMC and arg max for that combination KI KA
+  
+    
+    end
+
+   figure(1)
+   plot(t,CMC)
+   figure(2)
+   plot(Ka.*0.001,maxcmc)
+   figure(3)
+   plot(Ka.*0.001,tmax)
+
+%% KI changes 
+close all
+clear all
+Ki=[1.8; 18; 180];
+
+    for j=1:length(Ki)
+        
+
+h=strcat('10_ki',num2str(Ki(j)),'_ka3000','.txt');
+
+
+P1 = dlmread(h,'\t'); 
+
+N=length(P1);
+
+P1(:,2)=P1(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+for k=1:N
+    
+    CMC(k,j)=-(P1(k,2)-0.55)./0.55; %save CMC for that KA in each column
+    
+    t(k)=P1(k,1);
+   
+end
+
+
+cc=CMC(:,j);
+
+[maxcmc(j),tmax(j)]=max(cc) %track maximum CMC and arg max for that combination KI KA
+  
+    
+    end
+
+   figure(1)
+   plot(t,CMC)
+   figure(2)
+   plot(Ki*0.001,maxcmc)
+   figure(3)
+   plot(Ki.*0.001,tmax)
+   
+      %% C=1 mM Ka changes
+ close all
+ clear all
+%load the files containing time and centre of mass
+Ka=[300;3000;30000];
+
+
+    for j=1:length(Ka)
+        
+
+h=strcat('1_ki18','_ka',num2str(Ka(j)),'.txt');
+
+
+P1 = dlmread(h,'\t'); 
+
+N=length(P1);
+
+P1(:,2)=P1(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+for k=1:N
+    
+    CMC(k,j)=-(P1(k,2)-0.55)./0.55; %save CMC for that KA in each column
+    
+    t(k)=P1(k,1);
+   
+end
+
+
+cc=CMC(:,j);
+
+[maxcmc(j),tmax(j)]=max(cc) %track maximum CMC and arg max for that combination KI KA
+  
+    
+    end
+
+   figure(1)
+   plot(t,CMC)
+   figure(2)
+   plot(Ka.*0.001,maxcmc)
+   figure(3)
+   plot(Ka.*0.001,tmax)
+
+%% KI changes 
+close all
+clear all
+Ki=[1.8; 18; 180];
+
+    for j=1:length(Ki)
+        
+
+h=strcat('1_ki',num2str(Ki(j)),'_ka3000','.txt');
+
+
+P1 = dlmread(h,'\t'); 
+
+N=length(P1);
+
+P1(:,2)=P1(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+for k=1:N
+    
+    CMC(k,j)=-(P1(k,2)-0.55)./0.55; %save CMC for that KA in each column
+    
+    t(k)=P1(k,1);
+   
+end
+
+
+cc=CMC(:,j);
+
+[maxcmc(j),tmax(j)]=max(cc) %track maximum CMC and arg max for that combination KI KA
+  
+    
+    end
+
+   figure(1)
+   plot(t,CMC)
+   figure(2)
+   plot(Ki*0.001,maxcmc)
+   figure(3)
+   plot(Ki*0.001,tmax)
