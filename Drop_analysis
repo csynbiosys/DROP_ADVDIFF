@@ -4,7 +4,7 @@
 %load the files containing time and centre of mass
 Ka=[300;3000;30000];
 
-
+%CMC in time
     for j=1:length(Ka)
         
 
@@ -39,6 +39,24 @@ cc=CMC(:,j);
    plot(Ka,maxcmc)
    figure(3)
    plot(Ka,tmax)
+   
+%uptake:
+
+
+ for j=1:length(Ka)
+        
+
+h=strcat('100_ki18','_ka',num2str(Ka(j)),'_uptake.txt');
+
+
+P2 = dlmread(h,'\t'); %load uptake vs time
+
+
+P2(:,2)=P2(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+up_tot(j)=sum(P2(:,2)) %total uptake after 600s
+
+ end
 
 %% KI changes 
 close all
@@ -68,7 +86,7 @@ end
 
 cc=CMC(:,j);
 
-[maxcmc(j),tmax(j)]=max(cc) %track maximum CMC and arg max for that combination KI KA
+[maxcmc(j),tmax(j)]=max(cc); %track maximum CMC and arg max for that combination KI KA
   
     
     end
@@ -79,6 +97,25 @@ cc=CMC(:,j);
    plot(Ki,maxcmc)
    figure(3)
    plot(Ki,tmax)
+   
+   %uptake:
+
+
+ for j=1:length(Ki)
+        
+
+h=strcat('100_ki',num2str(Ki(j)),'_ka3000_uptake','.txt');
+
+
+P2 = dlmread(h,'\t'); %load uptake vs time
+
+
+P2(:,2)=P2(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+up_tot(j)=sum(P2(:,2)) %total uptake after 600s
+
+ end
+
    
    %% C=10 mM Ka changes
  close all
@@ -121,6 +158,24 @@ cc=CMC(:,j);
    plot(Ka.*0.001,maxcmc)
    figure(3)
    plot(Ka.*0.001,tmax)
+   
+   %uptake:
+
+
+ for j=1:length(Ka)
+        
+
+h=strcat('10_ki18','_ka',num2str(Ka(j)),'_uptake.txt');
+
+
+P2 = dlmread(h,'\t'); %load uptake vs time
+
+
+P2(:,2)=P2(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+up_tot(j)=sum(P2(:,2)) %total uptake after 600s
+
+ end
 
 %% KI changes 
 close all
@@ -161,6 +216,24 @@ cc=CMC(:,j);
    plot(Ki*0.001,maxcmc)
    figure(3)
    plot(Ki.*0.001,tmax)
+   
+     %uptake:
+
+
+ for j=1:length(Ki)
+        
+
+h=strcat('10_ki',num2str(Ki(j)),'_ka3000_uptake','.txt');
+
+
+P2 = dlmread(h,'\t'); %load uptake vs time
+
+
+P2(:,2)=P2(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+up_tot(j)=sum(P2(:,2)) %total uptake after 600s
+
+ end
    
       %% C=1 mM Ka changes
  close all
@@ -203,7 +276,24 @@ cc=CMC(:,j);
    plot(Ka.*0.001,maxcmc)
    figure(3)
    plot(Ka.*0.001,tmax)
+   
+  %uptake:
 
+
+ for j=1:length(Ka)
+        
+
+h=strcat('1_ki18','_ka',num2str(Ka(j)),'_uptake.txt');
+
+
+P2 = dlmread(h,'\t'); %load uptake vs time
+
+
+P2(:,2)=P2(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+up_tot(j)=sum(P2(:,2)) %total uptake after 600s
+
+ end
 %% KI changes 
 close all
 clear all
@@ -243,3 +333,21 @@ cc=CMC(:,j);
    plot(Ki*0.001,maxcmc)
    figure(3)
    plot(Ki*0.001,tmax)
+   
+     %uptake:
+
+
+ for j=1:length(Ki)
+        
+
+h=strcat('1_ki',num2str(Ki(j)),'_ka3000_uptake','.txt');
+
+
+P2 = dlmread(h,'\t'); %load uptake vs time
+
+
+P2(:,2)=P2(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
+
+up_tot(j)=sum(P2(:,2)) %total uptake after 600s
+
+ end
