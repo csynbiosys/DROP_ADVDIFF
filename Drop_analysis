@@ -13,6 +13,7 @@ h=strcat('100ki18','_ka',num2str(Ka(j)),'.txt');
 
 P1 = dlmread(h,'\t'); 
 
+
 N=length(P1);
 
 P1(:,2)=P1(:,2)./0.9;    %in order to renormalize and have the coordinate r  of the centre of mass
